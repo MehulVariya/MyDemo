@@ -17,19 +17,21 @@ class _ProviderPageState extends State<ProviderPage> {
       appBar: AppBar(
         title: const Text("Provider"),
       ),
-      body: ChangeNotifierProvider<MyProvider>(
-        create: (context) => MyProvider(),
-        child: Consumer<MyProvider>(
-          builder: (context, provider, widget) {
-            return Column(
-              children: [
-                Text("What is your name"),
-                Text("My name is ${provider.name}"),
-                ElevatedButton(
-                    onPressed: () => provider.data(), child: const Text("Click"))
-              ],
-            );
-          },
+      body: Center(
+        child: ChangeNotifierProvider<MyProvider>(
+          create: (context) => MyProvider(),
+          child: Consumer<MyProvider>(
+            builder: (context, provider, widget) {
+              return Column(
+                children: [
+                  const Text("What is your name"),
+                  Text("My name is ${provider.name}"),
+                  ElevatedButton(
+                      onPressed: () => provider.data(), child: const Text("Click"))
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
