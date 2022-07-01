@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myapp/ui/Bloc/bloc/my_bloc.dart';
-import 'package:myapp/ui/Bloc/screen/bloc_page.dart';
-import 'package:myapp/ui/provider/page_provider.dart';
+import 'package:myapp/ui/Cubit/Screen/cubit_page.dart';
+import 'package:myapp/ui/Cubit/cubit/cubit_bulit.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MyBloc(),
+      create: (context) => MyCubit(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "State Management",
-        home: BlocPage(),
+        home: CubitPage(),
       ),
     );;
   }
