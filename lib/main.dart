@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/ui/provider/page_provider.dart';
 
 void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "State Managment",
-      home: HomePage(),
-    );
+      home: ProviderPage(),
+    );;
   }
 }
